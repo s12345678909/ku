@@ -1,0 +1,38 @@
+https://mindmajix.com/splunk-vs-elk#comparison
+
+
+
+Suport for elk and splunk:
+===========================
+
+Infrastructure:
+===============
+
+
+Role Management:
+================
+elk:
+https://www.elastic.co/guide/en/elasticsearch/reference/current/built-in-roles.html
+splunk:
+https://docs.splunk.com/Documentation/Splunk/8.1.3/Security/Aboutusersandroles
+
+License:
+========
+
+Kibana UI Modrnization:
+=======================
+
+
+Querylanguage:
+==============
+splunk:
+
+https://docs.splunk.com/Documentation/Splunk/8.1.3/SearchTutorial/Usethesearchlanguage#:~:text=Splunk%20developed%20the%20Search%20Processing,by%20using%20the%20Search%20Assistant.
+
+https://www.bmc.com/blogs/elasticsearch-lucene-kibana-query-language/
+
+Learning curve:
+The Learning Curve
+The ELK Stack’s learning curve is flat for what it’s meant to do. Elastic offers paid courses, but there is a lot of free material online due to the popularity of the open-source platform.
+
+For Splunk, the learning curve is moderate in size, especially when carrying out more specialized analyzes. The company offers a trial period with extensive documentation, but the advanced Splunk educational courses are fairly expensive.
