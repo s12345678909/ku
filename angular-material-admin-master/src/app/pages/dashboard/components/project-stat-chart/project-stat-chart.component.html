@@ -1,0 +1,200 @@
+<div class="project-stat">
+  <mat-card class="project-stat__item">
+    <mat-card-title class="project-stat__title">
+      <h5 class="project-stat__title-text">Code status</h5>
+
+      <app-date-menu (changeDateType)="changeDateType($event, projectsType.lightBlue)"></app-date-menu>
+    </mat-card-title>
+    <mat-card-content class="project-stat-content">
+      <div class="project-stat-content__total-info-wrapper">
+        <div class="project-stat-content__total-info">
+          <p class="project-stat-content__total-info-users">4500</p>
+          <p
+            *ngIf="selectedStatsLightBlueData.percent > 0"
+            class="project-stat-content__total-info-percent"
+          >+{{selectedStatsLightBlueData.percent}}%</p>
+          <p
+            *ngIf="selectedStatsLightBlueData.percent < 0"
+            class="project-stat-content__total-info-percent-warn"
+          >2.7%</p>
+        </div>
+        <div class="project-stat-content__total-info-chart">
+          <apx-chart
+            [series]="chartOptions.series"
+            [chart]="chartOptions.chart"
+            [dataLabels]="chartOptions.dataLabels"
+            [plotOptions]="chartOptions.plotOptions"
+            [xaxis]="chartOptions.xaxis"
+            [stroke]="chartOptions.stroke"
+            [legend]="chartOptions.legend"
+            [grid]="chartOptions.grid"           
+            [fill]="chartOptions.fill"
+            [yaxis]="chartOptions.yaxis"
+           
+            
+           
+
+          ></apx-chart>
+        </div>
+      </div>
+
+      <div class="project-stat-content__stat-wrapper">
+        <div class="project-stat-content__stat-item">
+          <div class="project-stat-content__stat-value-wrapper">
+            <h6 class="project-stat-content__stat-value">10</h6>
+            <mat-icon class="project-stat-content__stat-icon">arrow_upward</mat-icon>
+          </div>
+          <p class="project-stat-content__stat-item-title">No of Developers in Jira Board</p>
+        </div>
+
+        <div class="project-stat-content__stat-item">
+          <div class="project-stat-content__stat-value-wrapper">
+            <h6 class="project-stat-content__stat-value">8</h6>
+            <!--<mat-icon class="project-stat-content__stat-icon">arrow_upward</mat-icon>-->
+          </div>
+          <p class="project-stat-content__stat-item-title">No of Developers Checked in Code</p>
+        </div>
+
+        <div class="project-stat-content__stat-item">
+          <div class="project-stat-content__stat-value-wrapper">
+            <h6 class="project-stat-content__stat-value">100</h6>
+            <mat-icon class="project-stat-content__stat-icon-warn">arrow_upward</mat-icon>
+          </div>
+          <p class="project-stat-content__stat-item-title">Lines of Code Checked in</p>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+<mat-card class="project-stat__item">
+    <mat-card-title class="project-stat__title">
+      <h5 class="project-stat__title-text">Unit Tests And Coverage</h5>
+
+      <app-date-menu (changeDateType)="changeDateType($event, projectsType.SingApp)"></app-date-menu>
+    </mat-card-title>
+    <mat-card-content class="project-stat-content">
+      <div class="project-stat-content__total-info-wrapper">
+        <div class="project-stat-content__total-info">
+          <!--Total Code Coverage-->
+          <p class="project-stat-content__total-info-users">94%</p>
+          <p
+            *ngIf="selectedStatsSingAppData.percent > 0"
+            class="project-stat-content__total-info-percent"
+          >+{{selectedStatsSingAppData.percent}}%</p>
+          <p
+            *ngIf="selectedStatsSingAppData.percent < 0"
+            class="project-stat-content__total-info-percent-warn_unit"
+          >-1.2%</p>
+        </div>
+        <div class="project-stat-content__total-info-chart">
+          <apx-chart
+          [series]="chartOptionsPie.series"
+          [chart]="chartOptionsPie.chart"
+          [labels]="chartOptionsPie.labels"
+          [responsive]="chartOptionsPie.responsive"
+          [legend]="chartOptionsPie.legend"
+          [dataLabels]="chartOptionsPie.dataLabels"
+          ></apx-chart>
+        </div>
+      </div>
+
+     <div class="project-stat-content__stat-wrapper">
+        <!-- <div class="project-stat-content__stat-item">
+          <div class="project-stat-content__stat-value-wrapper">
+            <h6 class="project-stat-content__stat-value">1</h6>
+            <mat-icon class="project-stat-content__stat-icon">arrow_upward</mat-icon>
+          </div>
+          <p class="project-stat-content__stat-item-title">Testing Defects</p>
+        </div>
+
+        <div class="project-stat-content__stat-item">
+          <div class="project-stat-content__stat-value-wrapper">
+            <h6 class="project-stat-content__stat-value">0</h6>
+            <mat-icon class="project-stat-content__stat-icon">arrow_upward</mat-icon>
+          </div>
+          <p class="project-stat-content__stat-item-title">Exceptions/errors</p>
+        </div>-->
+
+        <div class="project-stat-content__stat-item">
+          <div class="project-stat-content__stat-value-wrapper">
+            <h6 class="project-stat-content__stat-value">20</h6>
+            <mat-icon class="project-stat-content__stat-icon">arrow_upward</mat-icon>
+          </div>
+          <p class="project-stat-content__stat-item-title">Unit Tests Coverage</p>
+        </div>
+        <div class="project-stat-content__stat-item">
+          <div class="project-stat-content__stat-value-wrapper">
+            <h6 class="project-stat-content__stat-value">100%</h6>
+            <mat-icon class="project-stat-content__stat-icon">arrow_upward</mat-icon>
+          </div>
+          <p class="project-stat-content__stat-item-title">Functional Coverage</p>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="project-stat__item">
+    <mat-card-title class="project-stat__title">
+      <h5 class="project-stat__title-text">{{selectedStatsRNSData.name}}</h5>
+
+      <app-date-menu (changeDateType)="changeDateType($event, projectsType.RNS)"></app-date-menu>
+    </mat-card-title>
+    <mat-card-content class="project-stat-content">
+      <div class="project-stat-content__total-info-wrapper">
+        <div class="project-stat-content__total-info">
+          <p class="project-stat-content__total-info-users">{{selectedStatsRNSData.users}}</p>
+          <p
+            *ngIf="selectedStatsRNSData.percent > 0"
+            class="project-stat-content__total-info-percent"
+          >+{{selectedStatsRNSData.percent}}%</p>
+          <p
+            *ngIf="selectedStatsRNSData.percent < 0"
+            class="project-stat-content__total-info-percent-warn"
+          >{{selectedStatsRNSData.percent}}%</p>
+        </div>
+        <div class="project-stat-content__total-info-chart">
+          <apx-chart
+            [series]="selectedStatsRNSData.series"
+            [chart]="chartOptions.chart"
+            [dataLabels]="chartOptions.dataLabels"
+            [plotOptions]="chartOptions.plotOptions"
+            [yaxis]="chartOptions.yaxis"
+            [legend]="chartOptions.legend"
+            [fill]="chartOptions.fill"
+            [stroke]="chartOptions.stroke"
+            [tooltip]="chartOptions.tooltip"
+            [xaxis]="chartOptions.xaxis"
+            [grid]="chartOptions.grid"
+            [colors]="colors.PINK"
+          ></apx-chart>
+        </div>
+      </div>
+
+      <div class="project-stat-content__stat-wrapper">
+        <div class="project-stat-content__stat-item">
+          <div class="project-stat-content__stat-value-wrapper">
+            <h6 class="project-stat-content__stat-value">{{selectedStatsRNSData.registrations}}</h6>
+            <mat-icon class="project-stat-content__stat-icon-warn">arrow_upward</mat-icon>
+          </div>
+          <p class="project-stat-content__stat-item-title">Registrations</p>
+        </div>
+
+        <div class="project-stat-content__stat-item">
+          <div class="project-stat-content__stat-value-wrapper">
+            <h6 class="project-stat-content__stat-value">{{selectedStatsRNSData.bounce}}</h6>
+            <mat-icon class="project-stat-content__stat-icon">arrow_upward</mat-icon>
+          </div>
+          <p class="project-stat-content__stat-item-title">Bounce Rate</p>
+        </div>
+
+        <div class="project-stat-content__stat-item">
+          <div class="project-stat-content__stat-value-wrapper">
+            <h6 class="project-stat-content__stat-value">{{selectedStatsRNSData.views}}</h6>
+            <mat-icon class="project-stat-content__stat-icon">arrow_upward</mat-icon>
+          </div>
+          <p class="project-stat-content__stat-item-title">Views</p>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
