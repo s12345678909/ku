@@ -1,0 +1,101 @@
+
+Lets start with your Introduction and professional  experice you 
+can also mention any work related challages you have faced and how you resolved it
+
+ask what he has worked in core
+Java:
+-----
+1)What are the SOLID design priciles in object oriented programing and why it is used 
+SOLID refers to five design principles in object-oriented programming, 
+designed to reduce code rot and improve the value, function, and maintainability of software. The SOLID principles help the user develop less coupled code
+https://www.jrebel.com/blog/solid-principles-in-java
+
+Design pattern:
+---------------
+11)What are the  common design patterns groups?What are the designe patterns you have used ?can you explain few and what was the benifits you got using them?
+https://www.javatpoint.com/design-patterns-in-java?
+22)Differences between Coupling and Cohesion?
+
+2)can you explain about Java Memory Model?Garbage collection
+https://www.javatpoint.com/jvm-java-virtual-machine
+
+5)so have you faced any memory leak issue in java?How did you resolved it
+==>gc() which is known to increase free memory. You can keep checking this after a memory gobbling code executes.
+Easy way to solve OutOfMemoryError in java is to increase the maximum heap size by using JVM options -Xmx512M , this will immediately solve your OutOfMemoryError.
+
+Microservice:
+-------------
+What is microservice arhitecture ?what are the pros and cons of it
+https://www.edureka.co/blog/interview-questions/microservices-interview-questions/
+What is Domain Driven Design?what is the need of it?
+Spring cloud:refere you doc
+
+Spring Boot:
+------------
+https://www.edureka.co/blog/interview-questions/spring-boot-interview-questions/
+9)Diffrence between  Spring vs Spring Boot ?what is the need and advantages of spring boot?
+10)What is the need for Spring Boot DevTools?
+11)What are the @RequestMapping  and @RestController annotation in Spring Boot used for?
+12)What is the difference between RequestMapping and GetMapping?
+13) What is the way to use profiles to configure the environment-specific configuration with Spring Boot?
+
+
+
+Spring boot security using  jwt and auth 2:
+------------------------------------------------
+What is JWT?And where to use it?o
+https://www.javainuse.com/spring/jwt
+https://www.javainuse.com/spring/spring-boot-oauth-introduction
+
+
+Collection:
+-----------
+6)what are comparable and comparator interfaces why it is used for and what are the difference bewteen them?
+https://www.javatpoint.com/difference-between-comparable-and-comparator
+
+
+
+
+
+https://www.geeksforgeeks.org/software-engineering-differences-between-coupling-and-cohesion/
+
+33)What is GOD class and why should we avoid it?
+https://herownhelloworld.medium.com/heres-all-one-should-know-about-god-class-in-java-e318acbb9717
+Spring:
+------- 
+7)what is Dependency Injection in Spring?
+https://www.javatpoint.com/dependency-injection-in-spring
+
+
+
+
+
+Angular:
+--------
+https://www.interviewbit.com/angular-interview-questions/
+
+Database:
+---------
+1)When to Use a NoSQL Database?
+https://www.mongodb.com/nosql-explained/when-to-use-nosql
+https://www.whitesourcesoftware.com/resources/blog/when-to-consider-a-nosql-vs-relational-database/
+
+
+2)Question:?Your application is growing. It has more active users, 
+more features, and generates more data every day. Your database is now becoming 
+a bottleneck for the rest of your application what is the solution to overcome this?
+https://www.mongodb.com/features/database-sharding-explained
+
+
+
+4)query optimization?if the query is runnigvery slow how will you ovrecome it?what are the aprameter you will check and impove?
+indexes?define stats? see the query plan
+
+System Designe:
+---------------
+https://www.codekarle.com/system-design/TinyUrl-system-design.html
+https://www.codekarle.com/system-design/Notification-system-design.html
+
+Sancing tools:
+--------------
+what tools have experience with for code quality (static code analysis) and core securtiy 
