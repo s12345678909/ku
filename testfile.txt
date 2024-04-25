@@ -1,0 +1,235 @@
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface QueueGroupRepository extends MongoRepository<QueueGroup, String> {
+}
+
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface QueueRepository extends MongoRepository<Queue, String> {
+}
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CMSRuleRepository extends MongoRepository<CMSRule, String> {
+}
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface WorkItemRepository extends MongoRepository<WorkItem, String> {
+}
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserRepository extends MongoRepository<User, String> {
+}
+
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserCapacityRepository extends MongoRepository<UserCapacity, String> {
+}
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface UserMgmtRepository extends MongoRepository<UserMgmt, String> {
+}
+
+========================
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
+
+@Document(collection = "queue_group")
+public class QueueGroup {
+
+    @Id
+    private String id;
+
+    private String queueGroupName;
+    private QueueGroupType queueGroupType;
+    private QueueGroupRules queueGroupsRules;
+    private List<String> queueId;
+
+    // Getters and setters
+}
+
+
+public class QueueGroupType {
+
+    private String role;
+    private String taskDomain;
+    private String geographicalLocation;
+
+    // Getters and setters
+}
+
+
+public class QueueGroupRules {
+
+    private String cmRuleId;
+    private String queueGroupRuleVersion;
+
+    // Getters and setters
+}
+
+=====
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+public class Queue {
+
+    @Id
+    private String id;
+
+    private String queueName;
+    private String queueType;
+    private String queueGroupId;
+    private String queuePriority;
+    private String queueAssignmentModel;
+    private int queueCapacity;
+    private QueueRules queueRules;
+    private UserAssignment userAssignment;
+
+    // Getters and setters
+}
+
+public class QueueRules {
+
+    private String capacityManagementRuleId;
+    private String queueRuleVersion;
+
+    // Getters and setters
+}
+
+public class UserAssignment {
+
+    private String userId;
+    private String userPriorityGroup;
+
+    // Getters and setters
+}
+
+============
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+public class CMSRule {
+
+    @Id
+    private String id;
+
+    private String ruleType;
+    private String ruleModelAttributeId;
+    private String operator;
+    private String ruleModelAttributeValue;
+    private String ruleExpression;
+    private String ruleVersion;
+    private String queueId;
+
+    // Getters and setters
+}
+
+========
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Date;
+
+public class WorkItem {
+
+    @Id
+    private String id;
+
+    private String workItemType;
+    private String queueId;
+    private String prioritizationScore;
+    private CapacityManagementDataModel capacityManagementDataModel;
+    private WorkItemReference workItemReference;
+    private WorkItemStates workItemStates;
+    private String assignmentUserId;
+
+    // Getters and setters
+}
+
+public class CapacityManagementDataModel {
+
+    private Object loanData;
+
+    // Getters and setters
+}
+
+public class WorkItemReference {
+
+    private String referenceId;
+    private String referenceIdType;
+
+    // Getters and setters
+}
+
+public class WorkItemStates {
+
+    private String workItemState;
+    private Date stateChangeDate;
+
+    // Getters and setters
+}
+
+=============
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+public class User {
+
+    @Id
+    private String id;
+
+    private String userName;
+    private String userRole;
+    private String managerId;
+    private String userAuthorizations;
+    private String userCertifications;
+    private UserCapacity userCapacity;
+
+    // Getters and setters
+}
+
+public class UserCapacity {
+
+    private String capacityModelType;
+    private int maxCapacity;
+    private String weightage;
+
+    // Getters and setters
+}
+
+============
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+public class UserMgmt {
+
+    @Id
+    private String id;
+
+    private String delegateId;
+
+    // Getters and setters
+}
+
